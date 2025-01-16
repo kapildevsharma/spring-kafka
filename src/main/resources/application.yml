@@ -1,0 +1,18 @@
+server:
+  port: 9000
+
+# Use kafka server of docker
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092  # Change this to your Kafka server's address
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: test-consumer-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+kafka:
+  topic:
+    name: my-topic  # Replace with your actual Kafka topic name
