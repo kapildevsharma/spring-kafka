@@ -53,18 +53,6 @@ services:
    # volumes:
     #  - kafka-data:/var/lib/kafka/data  # Persist Kafka data
 
-  kafka-application:
-    build:
-     context: .
-     dockerfile: Dockerfile
-    container_name: kafka-application
-    networks:
-     - kafka-network
-    ports:
-     - "9000:9000"  # Expose the Spring Boot app (frontend)
-    depends_on:
-     - kafka
-
 volumes:
   zookeeper-data:
   kafka-data:
